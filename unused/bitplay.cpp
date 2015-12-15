@@ -1,14 +1,19 @@
 #include <iostream>
 #include <cassert>
+#include <bitset>
 using namespace std;
 
 //Edit these two functions
 void set_bit(unsigned char &x, int i, bool value){
     //set bit i to value (in place)
+    if (value) x |= 1 << i;
+    else x &= ~(1 << i);
 }
 
 bool get_bit(unsigned char x, int i){
     //return the value of bit i
+    return (x >> i) & 1;
+
 }
 //stop editing here
 
